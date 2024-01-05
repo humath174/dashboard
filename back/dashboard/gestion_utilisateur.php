@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'database.phppoà'; // Assurez-vous d'avoir ce fichier avec les informations de connexion à la base de données
+require_once 'database.php'; // Assurez-vous d'avoir ce fichier avec les informations de connexion à la base de données
 
 // Récupérer l'ID de l'utilisateur à partir des paramètres de l'URL
 $utilisateur_id = $_GET['utilisateur_id'];
