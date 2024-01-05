@@ -25,9 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ajouter un utilisateur
     if (isset($_POST['ajouter_utilisateur'])) {
         $nom_utilisateur = $_POST['nom_utilisateur'];
-        $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
+        $mot_de_passe = $_POST['mot_de_passe'];
 
-        $requete_ajout_utilisateur = "INSERT INTO users (nom_utilisateur, mot_de_passe) VALUES ('$nom_utilisateur', '$mot_de_passe')";
+        $requete_ajout_utilisateur = "INSERT INTO users (name, mdp) VALUES ('$nom_utilisateur', '$mot_de_passe')";
         $connexion->query($requete_ajout_utilisateur);
     }
 
