@@ -43,6 +43,6 @@ if (!isset($_SESSION['username'])) {
     <?php
 } else {
 // Afficher un message personnalisé si la session est active
-    echo "<a href='welcome.php'>Tableaux de bord</a>";
+    echo "<a href='index.php'>Tableaux de bord</a>";
 }
 ?>
