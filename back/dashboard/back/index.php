@@ -52,7 +52,7 @@ if (isset($_SESSION['username'])) {
     <label for="db_name">Choisir la Base de Données :</label>
     <select name="db_name" id="db_name">
         <option value="bbra">Bbra</option>
-        <option value="base2">Base de Données 2</option>
+        <option value="base2">DigitalGroup</option>
         <!-- Ajoutez d'autres options selon vos bases de données -->
     </select>
     <input type="submit" value="Afficher Utilisateurs">
