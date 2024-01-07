@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,15 +30,12 @@
     </style>
 </head>
 <body>
-
 <h1>Dashboard </h1>
-
 <ul>
     <li><a href="bbra/welcome.php" target="_blank">Dashboard Bbra</a></li>
     <li><a href="dg/index.php" target="_blank">Dashboard DigitalGroup</a></li>
     <li><a href="portfolio/index.php" target="_blank">Dashboard Portfolio</a></li>
     <li><a href="back/index.php" target="_blank">Gestions Utilisateurs</a></li>
 </ul>
-
 </body>
 </html>
