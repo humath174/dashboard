@@ -45,7 +45,7 @@ if (isset($_SESSION['username'])) {
 <?php
 include('navbar.php');
 ?>
-<
+
 
 <?php
 // Paramètres de connexion à la base de données
@@ -68,6 +68,7 @@ if ($resultat->num_rows > 0) {
     echo "<h2>Informations des Utilisateurs</h2>";
     echo "<table>";
     echo "<tr><th>ID</th><th>Nom</th><th>Prenom</th><th>Mail</th><th>Telephone</th><th>Description</th></tr>";
+    echo "</table>";
 
     // Afficher les informations des utilisateurs dans le tableau
     while ($row = $resultat->fetch_assoc()) {

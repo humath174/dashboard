@@ -45,7 +45,7 @@ if (isset($_SESSION['username'])) {
 <?php
 include('navbar.php');
 ?>
-<
+
 
 <?php
 // Paramètres de connexion à la base de données
