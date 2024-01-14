@@ -1,4 +1,10 @@
 /* Pour les écrans larges (> 991.98px) */
+main {
+    margin-top: 58px; /* Correspond à la hauteur de la barre de navigation */
+    padding-top: 20px; /* Ajoutez un padding supplémentaire si nécessaire */
+}
+
+
 @media (min-width: 991.98px) {
     main {
         padding-left: 240px;
