@@ -1,9 +1,8 @@
-body {
-    background-color: #fbfbfb;
-}
+/* Pour les écrans larges (> 991.98px) */
 @media (min-width: 991.98px) {
     main {
         padding-left: 240px;
+        z-index: 500; /* Valeur de z-index inférieure à la barre latérale */
     }
 }
 
@@ -19,11 +18,13 @@ body {
     z-index: 600;
 }
 
+/* Pour les écrans étroits (<= 991.98px) */
 @media (max-width: 991.98px) {
     .sidebar {
         width: 100%;
     }
 }
+
 .sidebar .active {
     border-radius: 5px;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
