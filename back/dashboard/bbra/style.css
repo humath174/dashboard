@@ -1,54 +1,62 @@
-main {
-    margin-top: 58px; /* Correspond à la hauteur de la barre de navigation */
-    padding-top: 20px; /* Ajoutez un padding supplémentaire si nécessaire */
-}
-
+/* Ajoutez ce code à votre fichier style.css */
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    margin-top: 58px; /* Correspond à la hauteur de la barre de navigation */
-    padding-top: 20px; /* Ajoutez un padding supplémentaire si nécessaire */
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
 .container {
     margin-top: 20px;
 }
 
-.navbar {
-    background-color: #3498db;
-    color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.nav-link {
-    color: white !important;
-}
-
 .table {
     width: 100%;
-    border-collapse: collapse;
     margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
 }
 
-.table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
+.table th,
+.table td {
     padding: 12px;
     text-align: left;
+    border-bottom: 2px solid #007bff;
 }
 
-th {
-    background-color: #3498db;
-    color: white;
-    border-radius: 5px 5px 0 0;
+.table th {
+    background-color: #007bff;
+    color: #fff;
 }
 
-h2, h4, p {
-    color: #333;
+h2 {
+    color: #007bff;
 }
 
-/* Ajoutez d'autres styles au besoin */
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+/* Styles spécifiques à Bootstrap */
+.navbar {
+    background-color: #007bff;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+/* Styles spécifiques à la page d'administration */
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Ajoutez d'autres styles personnalisés au besoin */

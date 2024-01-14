@@ -26,6 +26,7 @@ if (isset($_SESSION['username'])) {
     <meta name="description" content="Bruno Broyer Reflets Amenagements" />
     <meta name="keywords" content="pisciniste, bruno broyer reflets amenagements, bruno broyer, amenagements, piscine chatillon sur chalaronne, chatillon sur chalaronne, ain, rhone, auvergne rhone-alpes" />
     <meta name="author" content="DigitalGroup" />
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/css/style-nav.css">
     <script type="text/javascript" src="/js/annim.js"></script>
 
@@ -39,13 +40,14 @@ if (isset($_SESSION['username'])) {
 
      Google tag (gtag.js)
     -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TXPSHGCFL"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z62THB642K"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-5TXPSHGCFL');
+        gtag('config', 'G-Z62THB642K');
     </script>
 </head>
 

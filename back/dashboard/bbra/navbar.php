@@ -15,24 +15,24 @@
                 <a class="nav-link" href="traffic.php">Analytics</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Dashboard Image
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="dashboard-img.php">Prévisualisation</a>
-                    <a class="dropdown-item" href="img-chr.php">Ajouter Image</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="dashboard-img.php">Prévisualisation</a></li>
+                    <li><a class="dropdown-item" href="img-chr.php">Ajouter Image</a></li>
 
-                </div>
+                </ul>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Dashboard Réalisation
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="dashboard-réal.php">Prévisualisation</a>
-                    <a class="dropdown-item" href="réa-chr.php">Ajouter Réalisation</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="dashboard-réal.php">Prévisualisation</a></li>
+                    <li><a class="dropdown-item" href="réa-chr.php">Ajouter Réalisation</a></li>
 
-                </div>
+                </ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/index.php">Users</a>
