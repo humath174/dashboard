@@ -27,6 +27,7 @@ if (isset($_SESSION['username'])) {
     <meta name="keywords" content="pisciniste, bruno broyer reflets amenagements, bruno broyer, amenagements, piscine chatillon sur chalaronne, chatillon sur chalaronne, ain, rhone, auvergne rhone-alpes" />
     <meta name="author" content="DigitalGroup" />
     <link rel="stylesheet" href="/css/style-nav.css">
+    <script type="text/javascript" src="/js/annim.js"></script>
 
 
 
