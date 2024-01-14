@@ -1,3 +1,9 @@
+main {
+    margin-top: 58px; /* Correspond à la hauteur de la barre de navigation */
+    padding-top: 20px; /* Ajoutez un padding supplémentaire si nécessaire */
+}
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f4;
