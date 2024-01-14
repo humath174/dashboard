@@ -1,3 +1,8 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
 <nav class="navbar navbar-default no-margin">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header fixed-brand">
