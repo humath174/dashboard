@@ -7,5 +7,5 @@
         $stmt -> execute();
 
     }
-    header('location:students_list.php');
+    header('location:contact-rec.php');
 ?>
