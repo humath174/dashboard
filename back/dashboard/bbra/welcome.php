@@ -13,67 +13,66 @@
 <body class="bg-content">
 <main class="dashboard d-flex">
     <!-- start sidebar -->
+
     <?php
     include "component/sidebar.php";
+    include 'pages/conixion.php';
+    $nbr_students = $con->query("SELECT * FROM contact");
+    $nbr_students = $nbr_students->rowCount();
+
+    $nbr_cours = $con->query("SELECT * FROM devis");
+    $nbr_cours = $nbr_cours->rowCount();
+
+
     ?>
     <!-- end sidebar -->
 
     <!-- start content page -->
-    <div class="container-fluid px-4">
+    <div class="container-fluid px">
         <?php
         include "component/header.php";
         ?>
-
-
-        <!-- start student list table -->
-        <div class="student-list-header d-flex justify-content-between align-items-center py-2">
-            <div class="title h6 fw-bold">Demande de contact</div>
-            <div class="btn-add d-flex gap-3 align-items-center">
-                <div class="short">
-                    <i class="far fa-sort"></i>
+        <div class="cards row gap-3 justify-content-center mt-5">
+            <div class=" card__items card__items--blue col-md-3 position-relative">
+                <div class="card__students d-flex flex-column gap-2 mt-3">
+                    <i class="far fa-graduation-cap h3"></i>
+                    <span>Students</span>
                 </div>
-                <?php include 'component/popupadd.php'; ?>
+                <div class="card__nbr-students">
+                    <span class="h5 fw-bold nbr"><?php echo $nbr_students; ?></span>
+                </div>
+            </div>
+
+            <div class=" card__items card__items--rose col-md-3 position-relative">
+                <div class="card__Course d-flex flex-column gap-2 mt-3">
+                    <i class="fal fa-bookmark h3"></i>
+                    <span>Course</span>
+                </div>
+                <div class="card__nbr-course">
+                    <span class="h5 fw-bold nbr"><?php echo $nbr_cours; ?></span>
+                </div>
+            </div>
+
+            <div class=" card__items card__items--yellow col-md-3 position-relative">
+                <div class="card__payments d-flex flex-column gap-2 mt-3">
+                    <i class="fal fa-usd-square h3"></i>
+                    <span>Payments</span>
+                </div>
+                <div class="card__payments">
+                    <span class="h5 fw-bold nbr">DHS 556,000</span>
+                </div>
+            </div>
+
+            <div class="card__items card__items--gradient col-md-3 position-relative">
+                <div class="card__users d-flex flex-column gap-2 mt-3">
+                    <i class="fal fa-user h3"></i>
+                    <span>Users</span>
+                </div>
+                <span class="h5 fw-bold nbr">3</span>
             </div>
         </div>
-        <div class="table-responsive">
-            <table class="table student_list table-borderless">
-                <thead>
-                <tr class="align-middle">
-                    <th class="opacity-0">vide</th>
-                    <th>Nom</th>
-                    <th>Prenom</th>
-                    <th>Mail</th>
-                    <th>Telephone</th>
-                    <th>Description</th>
-                    <th class="opacity-0">list</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                include 'pages/conixion.php';
-                $result = $con -> query("SELECT * FROM contact");
-                foreach($result as $value):
-                    ?>
-                    <tr class="bg-white align-middle">
 
-                        <td><?php echo $value['nom'] ?></td>
-                        <td><?php echo $value['prenom'] ?></td>
-                        <td><?php echo $value['mail'] ?></td>
-                        <td><?php echo $value['tel'] ?></td>
-                        <td><?php echo $value['description'] ?></td>
-                        <td class="d-md-flex gap-3 mt-3">
-                            <a href="remove.php?Id=<?php echo $value['nom']?>"><i class="far fa-trash"></i></a>
-                        </td>
-                    </tr>
-
-                <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-        <!-- end student list table -->
     </div>
-    <!-- end content page -->
-    <!-- end contentpage -->
 </main>
 <script src="js/script.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
