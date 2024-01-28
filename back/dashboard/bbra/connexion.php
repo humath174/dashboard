@@ -11,21 +11,20 @@
 <body>
 <main class="bg-sign-in d-flex justify-content-center align-items-center">
     <div class=" form-sign-in bg-white mt-2 h-auto mb-2 text-center pt-2 pe-4 ps-4 d-flex flex-column">
-        <h1 class="E-classe text-start ms-3 ps-1" >E-classe</h1>
         <div>
-            <h2 class=" sign-in text-uppercase">sign in</h2>
+            <h2 class=" sign-in text-uppercase">Connexion</h2>
             <p>Enter your credentials to access your account</p>
         </div>
         <?php
         if(isset($_GET['error'])){
             if($_GET['error'] == "please enter your email or password"){
                 echo '<div sclass="alert alert-danger" role="alert">
-            please enter your email or password
+            Merci de completer lutilisateur et le mots de passe
           </div>';
             }
             elseif($_GET['error'] == "email or password not found"){
                 echo '<div class="alert alert-danger" role="alert">
-              email or password not found
+              Email ou mots de passe incorrect
           </div>';
             }
         }
@@ -33,7 +32,7 @@
         <form method="POST" action="login.php">
             <div class="mb-3 mt-3 text-start">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php  if(isset($_COOKIE['email'])){echo $_COOKIE['email']; }?>">
+                <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php  if(isset($_COOKIE['email'])){echo $_COOKIE['email']; }?>">
             </div>
             <div class="mb-3 text-start">
                 <label for="pwd">Password:</label>
