@@ -17,9 +17,9 @@
                                 class="fal fa-bookmark me-2"></i> <span>Contact</span></a></li>
                     <li class="h7"><a class=" nav-link text-dark" href="/bbra/devis-rec.php"><i
                                 class="far fa-graduation-cap me-2"></i> <span>Devis</span></a></li>
-                    <li class="h7"><a class=" nav-link text-dark" href="/bbra/dashboard-img.php.php"><i
+                    <li class="h7"><a class=" nav-link text-dark" href="/bbra/dashboard-img.php"><i
                                 class="fal fa-usd-square me-2"></i> <span>Photo</span></a></li>
-                    <li class="h7"><a class=" nav-link text-dark" href="/bbra/dashboard-réal.php"><i
+                    <li class="h7"><a class=" nav-link text-dark" href="#"><i
                                 class="fal fa-file-chart-line me-2"></i> <span>Réalisation</span></a></li>
                     <li class="h7"><a class=" nav-link text-dark" href="/bbra/fichier_client.php"><i
                                     class="fal fa-bookmark me-2"></i> <span>Fichier client</span></a></li>
@@ -27,7 +27,7 @@
                                 class="fal fa-sliders-v-square me-2"></i> <span>Garder</span></a></li>
                 </ul>
                 <ul class="logout d-flex justify-content-start list-unstyled">
-                    <li class=" h7"><a class="nav-link text-dark" href="../index.php"><span>Logout</span><i
+                    <li class=" h7"><a class="nav-link text-dark" href="../logout.php"><span>Logout</span><i
                                 class="fal fa-sign-out-alt ms-2"></i></a></li>
                 </ul>
             </div>
