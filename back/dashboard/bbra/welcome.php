@@ -27,65 +27,68 @@ if (isset($_SESSION['username'])) {
 <main class="dashboard d-flex">
     <!-- start sidebar -->
 
-    <?php
-    include "component/sidebar.php";
-    include 'pages/conixion.php';
-    $nbr_students = $con->query("SELECT * FROM contact");
-    $nbr_students = $nbr_students->rowCount();
-
-    $nbr_cours = $con->query("SELECT * FROM devis");
-    $nbr_cours = $nbr_cours->rowCount();
-
-
-    ?>
     <!-- end sidebar -->
 
     <!-- start content page -->
-    <div class="container-fluid px">
-        <?php
-        include "component/header.php";
-        ?>
-        <div class="cards row gap-3 justify-content-center mt-5">
-            <div class=" card__items card__items--blue col-md-3 position-relative">
-                <div class="card__students d-flex flex-column gap-2 mt-3">
-                    <i class="far fa-graduation-cap h3"></i>
-                    <span>Contact</span>
-                </div>
-                <div class="card__nbr-students">
-                    <span class="h5 fw-bold nbr"><?php echo $nbr_students; ?></span>
-                </div>
-            </div>
 
-            <div class=" card__items card__items--rose col-md-3 position-relative">
-                <div class="card__Course d-flex flex-column gap-2 mt-3">
-                    <i class="fal fa-bookmark h3"></i>
-                    <span>Devis</span>
-                </div>
-                <div class="card__nbr-course">
-                    <span class="h5 fw-bold nbr"><?php echo $nbr_cours; ?></span>
-                </div>
-            </div>
+<div class="container">
+    <h4 class="mt-4">Bienvenue sur l'Administration du site Bruno Broyer Reflets Amenagements</h4>
 
-            <div class=" card__items card__items--yellow col-md-3 position-relative">
-                <div class="card__payments d-flex flex-column gap-2 mt-3">
-                    <i class="fal fa-usd-square h3"></i>
-                    <span>Payments</span>
-                </div>
-                <div class="card__payments">
-                    <span class="h5 fw-bold nbr">DHS 556,000</span>
-                </div>
-            </div>
+    <?php
+    // Paramètres de connexion à la base de données
+    include('pages/conixion.php');
 
-            <div class="card__items card__items--gradient col-md-3 position-relative">
-                <div class="card__users d-flex flex-column gap-2 mt-3">
-                    <i class="fal fa-user h3"></i>
-                    <span>Users</span>
-                </div>
-                <span class="h5 fw-bold nbr">3</span>
-            </div>
-        </div>
+    // Créer une connexion à la base de données
+    $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
 
-    </div>
+    // Vérifier la connexion
+    if ($connexion->connect_error) {
+        die("La connexion à la base de données a échoué : " . $connexion->connect_error);
+    }
+
+    // Récupérer les informations des trois dernières demandes de devis
+    $requeteDevis = "SELECT * FROM devis ORDER BY date DESC LIMIT 3";
+    $resultatDevis = $connexion->query($requeteDevis);
+
+    if ($resultatDevis->num_rows > 0) {
+        echo "<h2 class='mt-4'>Informations des Trois Dernières Demandes de Devis</h2>";
+        echo "<table class='table'>";
+        echo "<thead><tr><th>ID</th><th>Nom</th><th>Prenom</th><th>Mail</th><th>Telephone</th><th>Description</th></tr></thead><tbody>";
+
+        // Afficher les informations des trois dernières demandes de devis dans le tableau
+        while ($rowDevis = $resultatDevis->fetch_assoc()) {
+            echo "<tr><td>" . $rowDevis["id"] . "</td><td>" . $rowDevis["nom"] . "</td><td>" . $rowDevis["prenom"] . "</td><td>" . $rowDevis["mail"] . "</td><td>" . $rowDevis["tel"] . "</td><td>" . $rowDevis["description"] . "</td></tr>";
+        }
+
+        echo "</tbody></table>";
+    } else {
+        echo "<p>Aucune demande de devis à afficher.</p>";
+    }
+
+    // Récupérer les informations des trois dernières demandes de contact
+    $requeteContact = "SELECT * FROM contact ORDER BY date DESC LIMIT 3";
+    $resultatContact = $connexion->query($requeteContact);
+
+    if ($resultatContact->num_rows > 0) {
+        echo "<h2 class='mt-4'>Informations des Trois Dernières Demandes de Contact</h2>";
+        echo "<table class='table'>";
+        echo "<thead><tr><th>ID</th><th>Nom</th><th>Prenom</th><th>Mail</th><th>Telephone</th><th>Description</th></tr></thead><tbody>";
+
+        // Afficher les informations des trois dernières demandes de contact dans le tableau
+        while ($rowContact = $resultatContact->fetch_assoc()) {
+            echo "<tr><td>" . $rowContact["id"] . "</td><td>" . $rowContact["nom"] . "</td><td>" . $rowContact["prenom"] . "</td><td>" . $rowContact["mail"] . "</td><td>" . $rowContact["tel"] . "</td><td>" . $rowContact["description"] . "</td></tr>";
+        }
+
+        echo "</tbody></table>";
+    } else {
+        echo "<p>Aucune demande de contact à afficher.</p>";
+    }
+
+    // Fermer la connexion à la base de données
+    $connexion->close();
+    ?>
+</div>
+
     <!-- end contentpage -->
 </main>
 <script src="js/script.js"></script>
