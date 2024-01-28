@@ -1,87 +1,84 @@
-<?php
-// Démarrez la session
-session_start();
-
-// Vérifiez si la variable de session 'username' existe
-if (isset($_SESSION['username'])) {
-    // L'utilisateur a une session ouverte
-    echo "Bienvenue, " . $_SESSION['username'] . "!";
-} else {
-    // Redirigez l'utilisateur vers la page de connexion
-    header("Location: login.php");
-    exit(); // Assurez-vous d'arrêter l'exécution du script après la redirection
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informations des Utilisateurs</title>
-    <link rel="stylesheet" href="/css/style-nav.css">
-    <script type="text/javascript" src="/js/annim.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <title>studens_list</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
-<body>
-<?php
-include('navbar.php');
-?>
+
+<body class="bg-content">
+<main class="dashboard d-flex">
+    <!-- start sidebar -->
+    <?php
+    include "component/sidebar.php";
+    ?>
+    <!-- end sidebar -->
+
+    <!-- start content page -->
+    <div class="container-fluid px-4">
+        <?php
+        include "component/header.php";
+        ?>
 
 
-<?php
-// Paramètres de connexion à la base de données
-include('database.php');
+        <!-- start student list table -->
+        <div class="student-list-header d-flex justify-content-between align-items-center py-2">
+            <div class="title h6 fw-bold">Students list</div>
+            <div class="btn-add d-flex gap-3 align-items-center">
+                <div class="short">
+                    <i class="far fa-sort"></i>
+                </div>
+                <?php include 'component/popupadd.php'; ?>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table student_list table-borderless">
+                <thead>
+                <tr class="align-middle">
+                    <th class="opacity-0">vide</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Mail</th>
+                    <th>Telephone</th>
+                    <th>Description</th>
+                    <th class="opacity-0">list</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                include 'pages/conixion.php';
+                $result = $con -> query("SELECT * FROM contact");
+                foreach($result as $value):
+                    ?>
+                    <tr class="bg-white align-middle">
+                        <td><img src="../assets/img/<?php echo $value['img'] ?>" alt="img" height="50" with="50"></td>
+                        <td><?php echo $value['nom'] ?></td>
+                        <td><?php echo $value['prenom'] ?></td>
+                        <td><?php echo $value['mail'] ?></td>
+                        <td><?php echo $value['tel'] ?></td>
+                        <td><?php echo $value['description'] ?></td>
+                        <td class="d-md-flex gap-3 mt-3">
+                            <a href="modifier.php?Id=<?php echo $value['Id']?>"><i class="far fa-pen"></i></a>
+                            <a href="remove.php?Id=<?php echo $value['Id']?>"><i class="far fa-trash"></i></a>
+                        </td>
+                    </tr>
 
-
-// Créer une connexion à la base de données
-$connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
-
-// Vérifier la connexion
-if ($connexion->connect_error) {
-    die("La connexion à la base de données a échoué : " . $connexion->connect_error);
-}
-
-// Récupérer les informations des utilisateurs depuis la base de données
-$requete = "SELECT * FROM devis";
-$resultat = $connexion->query($requete);
-
-if ($resultat->num_rows > 0) {
-    echo "<h2>Informations des Utilisateurs</h2>";
-    echo "<table>";
-    echo "<tr><th>ID</th><th>Nom</th><th>Prenom</th><th>Mail</th><th>Telephone</th><th>Description</th></tr>";
-
-    // Afficher les informations des utilisateurs dans le tableau
-    while ($row = $resultat->fetch_assoc()) {
-        echo "<tr><td>" . $row["id"] . "</td><td>" . $row["nom"] . "</td><td>" . $row["prenom"] . "</td><td>" . $row["mail"] . "</td><td>" . $row["tel"] . "</td><td>" . $row["description"] . "</td></tr>";
-    }
-
-    echo "</table>";
-} else {
-    echo "Aucune donnée à afficher.";
-}
-
-// Fermer la connexion à la base de données
-$connexion->close();
-?>
-
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <!-- end student list table -->
+    </div>
+    <!-- end content page -->
+</main>
+<script src="../js/script.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
 </body>
+
 </html>
