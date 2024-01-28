@@ -52,7 +52,7 @@
                               </div>
                                 </form>
 </div>
-    <script src="../js/script.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../../bbra/js/script.js"></script>
+    <script src="../../bbra/js/bootstrap.bundle.js"></script>
 </body>
 </html>

@@ -55,6 +55,6 @@
      </div>
      
    </main>
-   <script src="./js/validation.js"></script>
+   <script src="../bbra/js/validation.js"></script>
 </body>
 </html>
