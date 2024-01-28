@@ -23,6 +23,8 @@
     $nbr_cours = $con->query("SELECT * FROM devis");
     $nbr_cours = $nbr_cours->rowCount();
 
+    $nbr_client = $con->query("SELECT * FROM client");
+    $nbr_client = $nbr_client->rowCount();
 
     ?>
     <!-- end sidebar -->
@@ -36,7 +38,7 @@
             <div class=" card__items card__items--blue col-md-3 position-relative">
                 <div class="card__students d-flex flex-column gap-2 mt-3">
                     <i class="far fa-graduation-cap h3"></i>
-                    <span>Students</span>
+                    <span>Contact</span>
                 </div>
                 <div class="card__nbr-students">
                     <span class="h5 fw-bold nbr"><?php echo $nbr_students; ?></span>
@@ -46,7 +48,7 @@
             <div class=" card__items card__items--rose col-md-3 position-relative">
                 <div class="card__Course d-flex flex-column gap-2 mt-3">
                     <i class="fal fa-bookmark h3"></i>
-                    <span>Course</span>
+                    <span>Devis</span>
                 </div>
                 <div class="card__nbr-course">
                     <span class="h5 fw-bold nbr"><?php echo $nbr_cours; ?></span>
@@ -66,9 +68,9 @@
             <div class="card__items card__items--gradient col-md-3 position-relative">
                 <div class="card__users d-flex flex-column gap-2 mt-3">
                     <i class="fal fa-user h3"></i>
-                    <span>Users</span>
+                    <span>Fichier client</span>
                 </div>
-                <span class="h5 fw-bold nbr">3</span>
+                <span class="h5 fw-bold nbr"><?php echo $nbr_client; ?></span>
             </div>
         </div>
 
