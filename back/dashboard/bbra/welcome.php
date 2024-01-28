@@ -26,6 +26,9 @@
     $nbr_client = $con->query("SELECT * FROM client");
     $nbr_client = $nbr_client->rowCount();
 
+    $nbr_img = $con->query("SELECT * FROM photos");
+    $nbr_img = $nbr_img->rowCount();
+
     ?>
     <!-- end sidebar -->
 
@@ -58,10 +61,10 @@
             <div class=" card__items card__items--yellow col-md-3 position-relative">
                 <div class="card__payments d-flex flex-column gap-2 mt-3">
                     <i class="fal fa-usd-square h3"></i>
-                    <span>Payments</span>
+                    <span>Image</span>
                 </div>
                 <div class="card__payments">
-                    <span class="h5 fw-bold nbr">DHS 556,000</span>
+                    <span class="h5 fw-bold nbr"><?php echo $nbr_img; ?></span>
                 </div>
             </div>
 
