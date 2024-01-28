@@ -56,7 +56,6 @@
                 foreach($result as $value):
                     ?>
                     <tr class="bg-white align-middle">
-                        <td><img src="../assets/img/<?php echo $value['img'] ?>" alt="img" height="50" with="50"></td>
                         <td><?php echo $value['nom'] ?></td>
                         <td><?php echo $value['email'] ?></td>
                         <td><?php echo $value['telephone'] ?></td>
