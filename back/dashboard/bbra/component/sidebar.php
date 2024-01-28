@@ -27,7 +27,7 @@
                                 class="fal fa-sliders-v-square me-2"></i> <span>Garder</span></a></li>
                 </ul>
                 <ul class="logout d-flex justify-content-start list-unstyled">
-                    <li class=" h7"><a class="nav-link text-dark" href="../logout.php"><span>Logout</span><i
+                    <li class=" h7"><a class="nav-link text-dark" href="logout.php"><span>Logout</span><i
                                 class="fal fa-sign-out-alt ms-2"></i></a></li>
                 </ul>
             </div>
