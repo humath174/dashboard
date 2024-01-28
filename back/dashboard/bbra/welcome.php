@@ -30,7 +30,7 @@ if (isset($_SESSION['username'])) {
 
     <?php
     include "component/sidebar.php";
-    include 'conixion.php';
+    include 'pages/conixion.php';
     $nbr_students = $con->query("SELECT * FROM contact");
     $nbr_students = $nbr_students->rowCount();
 
