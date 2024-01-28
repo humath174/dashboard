@@ -5,7 +5,7 @@
                 <i class="far fa-times h4 me-3 close align-self-end d-md-none"></i>
             </div>
             <div class="img-admin d-flex flex-column align-items-center text-center gap-2">
-                <img class="rounded-circle" src="img-admin.jpeg" alt="img-admin" height="120" width="120">
+                <img class="rounded-circle" src="/bbra/component/img-admin.jpeg" alt="img-admin" height="120" width="120">
                 <h2 class="h6 fw-bold"><?php echo $_SESSION['username']; ?></h2>
                 <span class="h7 admin-color">Dashboard</span>
             </div>
@@ -21,6 +21,8 @@
                                 class="fal fa-usd-square me-2"></i> <span>Photo</span></a></li>
                     <li class="h7"><a class=" nav-link text-dark" href="/bbra/dashboard-réal.php"><i
                                 class="fal fa-file-chart-line me-2"></i> <span>Réalisation</span></a></li>
+                    <li class="h7"><a class=" nav-link text-dark" href="/bbra/fichier_client.php"><i
+                                    class="fal fa-bookmark me-2"></i> <span>Fichier client</span></a></li>
                     <li class="h7"><a class=" nav-link text-dark" href=""><i
                                 class="fal fa-sliders-v-square me-2"></i> <span>Garder</span></a></li>
                 </ul>
