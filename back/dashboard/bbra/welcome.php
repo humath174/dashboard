@@ -36,7 +36,7 @@ if (isset($_SESSION['username'])) {
 
     <?php
     // Paramètres de connexion à la base de données
-    include('pages/conixion.php');
+    include('database.php');
 
     // Créer une connexion à la base de données
     $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
