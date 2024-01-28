@@ -1,3 +1,17 @@
+<?php
+// Démarrez la session
+session_start();
+
+// Vérifiez si la variable de session 'username' existe
+if (isset($_SESSION['username'])) {
+    // L'utilisateur a une session ouverte
+    echo "Bienvenue, " . $_SESSION['username'] . "!";
+} else {
+    // Redirigez l'utilisateur vers la page de connexion
+    header("Location: connexion.php");
+    exit(); // Assurez-vous d'arrêter l'exécution du script après la redirection
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +19,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demande de devis</title>
+    <title>Demande de contact</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -29,7 +43,7 @@
 
         <!-- start student list table -->
         <div class="student-list-header d-flex justify-content-between align-items-center py-2">
-            <div class="title h6 fw-bold">Demande de devis</div>
+            <div class="title h6 fw-bold">Demande de contact</div>
             <div class="btn-add d-flex gap-3 align-items-center">
                 <div class="short">
                     <i class="far fa-sort"></i>
@@ -64,7 +78,7 @@
                         <td><?php echo $value['tel'] ?></td>
                         <td><?php echo $value['description'] ?></td>
                         <td class="d-md-flex gap-3 mt-3">
-                            <a href="remove.php?Id=<?php echo $value['Id']?>"><i class="far fa-trash"></i></a>
+                            <a href="remove.php?Id=<?php echo $value['nom']?>"><i class="far fa-trash"></i></a>
                         </td>
                     </tr>
 
