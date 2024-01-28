@@ -1,4 +1,5 @@
 <?php
+global $con;
 session_start();
 if(isset($_POST['submit'])){
     include 'pages/conixion.php';

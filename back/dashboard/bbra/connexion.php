@@ -32,7 +32,7 @@
         <form method="POST" action="login.php">
             <div class="mb-3 mt-3 text-start">
                 <label for="email">Email:</label>
-                <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php  if(isset($_COOKIE['email'])){echo $_COOKIE['email']; }?>">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php  if(isset($_COOKIE['email'])){echo $_COOKIE['email']; }?>">
             </div>
             <div class="mb-3 text-start">
                 <label for="pwd">Password:</label>
@@ -43,10 +43,10 @@
                 <label class="form-check-label" for="exampleCheck1">Remember Me</label>
             </div>
             <button type="submit" name="submit" class="btn text-white w-100 text-uppercase">sign in</button>
-            <p class="mt-4">Forgot your password? <a href="resetpass.php">Reset Password</a></p>
+
 
         </form>
-        <button href="" class="btn-register btn btn-success mb-3">Create Account</button>
+
     </div>
 
 </main>
