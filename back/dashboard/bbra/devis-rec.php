@@ -53,7 +53,7 @@
                 <tbody>
                 <?php
                 include 'pages/conixion.php';
-                $result = $con -> query("SELECT * FROM contact");
+                $result = $con -> query("SELECT * FROM devis");
                 foreach($result as $value):
                     ?>
                     <tr class="bg-white align-middle">
