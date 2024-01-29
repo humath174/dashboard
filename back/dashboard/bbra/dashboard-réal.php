@@ -85,8 +85,10 @@ $connexion->close();
         </div>
         <table>
             <tr>
+                <th>Titre </th>
+                <th>Description</th>
                 <th>Image</th>
-                <th>Action</th>
+
             </tr>
             <?php
             while ($row = $result->fetch_assoc()) {
