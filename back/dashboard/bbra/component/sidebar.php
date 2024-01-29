@@ -19,7 +19,7 @@
                                 class="far fa-graduation-cap me-2"></i> <span>Devis</span></a></li>
                     <li class="h7"><a class=" nav-link text-dark" href="/dashboard-img.php"><i
                                 class="fal fa-usd-square me-2"></i> <span>Photo</span></a></li>
-                    <li class="h7"><a class=" nav-link text-dark" href="#"><i
+                    <li class="h7"><a class=" nav-link text-dark" href="/dashboard-réal.php"><i
                                 class="fal fa-file-chart-line me-2"></i> <span>Réalisation</span></a></li>
                     <li class="h7"><a class=" nav-link text-dark" href="/fichier_client.php"><i
                                     class="fal fa-bookmark me-2"></i> <span>Fichier client</span></a></li>
