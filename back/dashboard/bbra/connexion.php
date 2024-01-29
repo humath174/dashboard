@@ -53,6 +53,15 @@ if (!isset($_SESSION['username'])) {
     <title>Formulaire de connexion en HTML & CSS - Frenchcoder</title>
     <link rel="stylesheet" href="/css/style-connexion.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HXKBBMW06"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-0HXKBBMW06');
+    </script>
 </head>
 <body>
 <form action="login.php" method="post">
