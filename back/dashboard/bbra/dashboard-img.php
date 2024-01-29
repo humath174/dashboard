@@ -12,38 +12,6 @@ if (isset($_SESSION['username'])) {
     exit(); // Assurez-vous d'arrêter l'exécution du script après la redirection
 }
 ?>
-<?php
-// Connexion à la base de données
-include('database.php');
-
-$connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
-
-if ($connexion->connect_error) {
-    die("La connexion à la base de données a échoué : " . $connexion->connect_error);
-}
-
-// Récupère les données des images depuis la base de données
-$selectQuery = "SELECT * FROM photos";
-$result = $connexion->query($selectQuery);
-
-// Traitement de la suppression d'image
-if (isset($_POST['delete'])) {
-    $imageIdToDelete = $_POST['image_id'];
-
-    // Supprime l'image de la base de données
-    $deleteQuery = "DELETE FROM photos WHERE id = $imageIdToDelete";
-    $deleteResult = $connexion->query($deleteQuery);
-
-    if ($deleteResult) {
-        echo "L'image a été supprimée avec succès.";
-    } else {
-        echo "Une erreur est survenue lors de la suppression de l'image : " . $connexion->error;
-    }
-}
-
-// Ferme la connexion à la base de données
-$connexion->close();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,7 +43,7 @@ $connexion->close();
 
         <!-- start student list table -->
         <div class="student-list-header d-flex justify-content-between align-items-center py-2">
-            <div class="title h6 fw-bold">Dashboard Photos</div>
+            <div class="title h6 fw-bold">Students list</div>
             <div class="btn-add d-flex gap-3 align-items-center">
                 <div class="short">
                     <i class="far fa-sort"></i>
@@ -83,35 +51,46 @@ $connexion->close();
                 <?php include 'component/popupadd.php'; ?>
             </div>
         </div>
-        <table>
-            <tr>
-                <th>Image</th>
-                <th>Action</th>
-            </tr>
-            <?php
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                // Affiche l'aperçu de l'image dans une cellule du tableau
-                echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['image_data']) . "' alt='" . $row['image_name'] . "'></td>";
+        <div class="table-responsive">
+            <table class="table student_list table-borderless">
+                <thead>
+                <tr class="align-middle">
+                    <th class="opacity-0">vide</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Enroll Number</th>
+                    <th>Date of admission</th>
+                    <th class="opacity-0">list</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                include 'component/conixion.php';
+                $result = $con -> query("SELECT * FROM realisation");
+                foreach($result as $value):
+                    ?>
+                    <tr class="bg-white align-middle">
+                        <td><img src="../assets/img/<?php echo $value['image_data'] ?>" alt="img" height="50" with="50"></td>
+                        <td><?php echo $value['titre'] ?></td>
+                        <td><?php echo $value['description'] ?></td>
 
-                // Affiche le bouton de suppression dans une cellule du tableau
-                echo "<td>
-                <form method='post' action='dashboard-réal.php'>
-                    <input type='hidden' name='image_id' value='" . $row['id'] . "'>
-                    <input type='submit' name='delete' value='Supprimer'>
-                </form>
-              </td>";
+                        <td class="d-md-flex gap-3 mt-3">
+                            <a href="modifier.php?Id=<?php echo $value['Id']?>"><i class="far fa-pen"></i></a>
+                            <a href="remove.php?Id=<?php echo $value['Id']?>"><i class="far fa-trash"></i></a>
+                        </td>
+                    </tr>
 
-                echo "</tr>";
-            }
-            ?>
-        </table>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
         <!-- end student list table -->
     </div>
     <!-- end content page -->
 </main>
-<script src="js/script.js"></script>
-<script src="js/bootstrap.bundle.js"></script>
+<script src="../../bbra/js/script.js"></script>
+<script src="../../bbra/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
