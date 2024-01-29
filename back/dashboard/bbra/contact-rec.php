@@ -29,14 +29,14 @@ if (isset($_SESSION['username'])) {
 <main class="dashboard d-flex">
     <!-- start sidebar -->
     <?php
-    include "/component/sidebar.php";
+    include "component/sidebar.php";
     ?>
     <!-- end sidebar -->
 
     <!-- start content page -->
     <div class="container-fluid px-4">
         <?php
-        include "/component/header.php";
+        include "component/header.php";
         ?>
 
 
@@ -47,7 +47,7 @@ if (isset($_SESSION['username'])) {
                 <div class="short">
                     <i class="far fa-sort"></i>
                 </div>
-                <?php include '/component/popupadd.php'; ?>
+                <?php include 'component/popupadd.php'; ?>
             </div>
         </div>
         <div class="table-responsive">
