@@ -1,4 +1,3 @@
-
 <?php
 // Démarrez la session
 session_start();
@@ -54,81 +53,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Ferme la connexion à la base de données
 $connexion->close();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta name="msvalidate.01" content="97522F7AC2412B9FEB60193A02ED6806" />
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bruno Broyer Reflets Amenagements</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Bruno Broyer Reflets Amenagements" />
-    <meta name="keywords" content="pisciniste, bruno broyer reflets amenagements, bruno broyer, amenagements, piscine chatillon sur chalaronne, chatillon sur chalaronne, ain, rhone, auvergne rhone-alpes" />
-    <meta name="author" content="DigitalGroup" />
-    <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS externe -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TXPSHGCFL"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-5TXPSHGCFL');
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande de contact</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5TXPSHGCFL"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-5TXPSHGCFL');
-</script>
-<body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Administration</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active text-dark" aria-current="page" href="welcome.php">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="devis-rec.php">Devis</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark"  href="contact-rec.php">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark"  href="img-chr.php">Charger une Image</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/site/index.html">Retourner sur le site</a>
-                </li>
-            </ul>
-        </div>
+<body class="bg-content">
+<main class="dashboard d-flex">
+    <!-- start sidebar -->
+    <?php
+    include "component/sidebar.php";
+    ?>
+    <!-- end sidebar -->
+
+    <!-- start content page -->
+    <div class="container-fluid px-4">
+        <?php
+        include "component/header.php";
+        ?>
+
+
+        <!-- start student list table -->
+        <form action="réa-chr.php" method="post" enctype="multipart/form-data">
+            <label for="titre">Titre :</label>
+            <input type="text" name="titre" required><br>
+
+            <label for="description">Description :</label>
+            <textarea name="description" required></textarea><br>
+
+            <label for="image">Sélectionnez une image :</label>
+            <input type="file" name="image" required><br>
+
+            <input type="submit" value="Envoyer">
+        </form>
+        <!-- end student list table -->
     </div>
-</nav>
-
-<h1>Ajouter une réalisation</h1>
-
-<form action="réa-chr.php" method="post" enctype="multipart/form-data">
-    <label for="titre">Titre :</label>
-    <input type="text" name="titre" required><br>
-
-    <label for="description">Description :</label>
-    <textarea name="description" required></textarea><br>
-
-    <label for="image">Sélectionnez une image :</label>
-    <input type="file" name="image" required><br>
-
-    <input type="submit" value="Envoyer">
-</form>
-
+    <!-- end content page -->
+</main>
+<script src="js/script.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
 </body>
+
 </html>
