@@ -96,7 +96,7 @@ $connexion->close();
 
                 // Affiche le bouton de suppression dans une cellule du tableau
                 echo "<td>
-                <form method='post' action='dashboard-img.php'>
+                <form method='post' action='dashboard-réal.php'>
                     <input type='hidden' name='image_id' value='" . $row['id'] . "'>
                     <input type='submit' name='delete' value='Supprimer'>
                 </form>
