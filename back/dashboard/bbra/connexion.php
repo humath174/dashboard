@@ -1,93 +1,87 @@
-<?php
-
-if (!isset($_SESSION['username'])) {
-
-?>
-<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page de Connexion</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 300px;
-            margin: 100px auto;
-            padding: 16px;
-            background-color: white;
-            border: 1px solid #ccc;
-        }
-    </style>
+    <title>sing-in</title>
+    <link rel="stylesheet" href="../bbra/css/bootstrap.css">
+    <link rel="stylesheet" href="../bbra/css/style.css">
 </head>
 <body>
+<main class="bg-sign-in d-flex justify-content-center align-items-center">
+    <div class=" form-sign-in bg-white mt-2 h-auto mb-2 text-center pt-2 pe-4 ps-4 d-flex flex-column">
+        <h1 class="E-classe text-start ms-3 ps-1" >E-classe</h1>
+        <div>
+            <h2 class=" sign-in text-uppercase">sign in</h2>
+            <p>Enter your credentials to access your account</p>
+        </div>
+        <?php
+        if(isset($_GET['error'])){
+            if($_GET['error'] == "please enter your email or password"){
+                echo '<div sclass="alert alert-danger" role="alert">
+            please enter your email or password
+          </div>';
+            }
+            elseif($_GET['error'] == "email or password not found"){
+                echo '<div class="alert alert-danger" role="alert">
+              email or password not found
+          </div>';
+            }
+        }
+        ?>
+        <form method="POST" action="login.php">
+            <div class="mb-3 mt-3 text-start">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php  if(isset($_COOKIE['email'])){echo $_COOKIE['email']; }?>">
+            </div>
+            <div class="mb-3 text-start">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pass" value="<?php  if(isset($_COOKIE['password'])){echo $_COOKIE['password']; }?>" autocomplete="on">
+            </div>
+            <div class="mb-3 form-check d-flex gap-2">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check">
+                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+            </div>
+            <button type="submit" name="submit" class="btn text-white w-100 text-uppercase">sign in</button>
+            <p class="mt-4">Forgot your password? <a href="resetpass.php">Reset Password</a></p>
 
-<div class="container">
-    <h2>Connexion</h2>
-    <form action="login.php" method="post">
-        <label for="username"><b>Nom d'utilisateur :</b></label>
-        <input type="text" placeholder="Entrez votre nom d'utilisateur" name="username" required>
+        </form>
+        <button href="" class="btn-register btn btn-success mb-3">Create Account</button>
+    </div>
 
-        <label for="password"><b>Mot de passe :</b></label>
-        <input type="password" placeholder="Entrez votre mot de passe" name="password" required>
+</main>
 
-        <button type="submit">Se connecter</button>
-    </form>
+<div class="bg"></div>
+
+<div class="register d-flex justify-content-center align-items-center">
+    <div class="sign-up bg-white mt-2 h-auto mb-2 text-center pt-4 pb-3 pe-4 ps-4 d-flex flex-column">
+        <div>
+            <h2 class=" sign-in text-uppercase">sign up</h2>
+        </div>
+        <form method="POST" id="signup" action="createaccout.php">
+            <div class="mb-3 mt-3 text-start">
+                <label class="label-signup" for="username">username: <span class="valid"></span></label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+            </div>
+            <div class="mb-3 text-start">
+                <label class="label-signup" for="email">Email: <span class="valid"></span></label>
+                <input type="email" class="form-control" id="Email" placeholder="Enter Email" name="email">
+            </div>
+            <div class="mb-3 text-start">
+                <label class="label-signup" for="pwd">Create Password: <span class="valid"></span></label>
+                <input type="password" class="form-control" id="Pwd" placeholder="Enter password" name="pass" autocomplete="on">
+            </div>
+            <div class="mb-3 text-start">
+                <label class="label-signup" for="conPwd">Confirm Password: <span class="valid"></span></label>
+                <input type="password" class="form-control" id="conPwd" placeholder="Confirm password" name="conPass" autocomplete="on">
+            </div>
+            <button type="submit" name="submit" class="btn text-white w-100 text-uppercase">sign up</button>
+            <p class="mt-4">you have account? <a href="index.php">sign-in</a></p>
+        </form>
+    </div>
 </div>
-
+<script src="/js/bootstrap.bundle.js"></script>
+<script src="../bbra/js/validation.js"></script>
 </body>
 </html>
-
--->
-
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Formulaire de connexion en HTML & CSS - Frenchcoder</title>
-    <link rel="stylesheet" href="/css/style-connexion.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HXKBBMW06"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-0HXKBBMW06');
-    </script>
-</head>
-<body>
-<form action="login.php" method="post">
-
-    <h1>Se connecter</h1>
-
-    <p class="choose-email">Utiliser mes codes donner par DigitalGrou :</p>
-
-    <div class="inputs">
-        <label for="username"><b>Nom d'utilisateur :</b></label>
-        <input type="text" placeholder="Nom D'utilisateur" name="username" />
-
-        <label for="password"><b>Mot de passe :</b></label>
-        <input type="password" placeholder="Mot de passe" name="password">
-    </div>
-
-    <div align="center">
-        <button type="submit">Se connecter</button>
-    </div>
-</form>
-</body>
-</html>
-
-<?php
-} else {
-// Afficher un message personnalisé si la session est active
-echo "<a href='welcome.php'>Tableaux de bord</a>";
-}
-?>
