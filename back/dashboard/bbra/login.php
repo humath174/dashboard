@@ -19,7 +19,7 @@ if (!isset($_SESSION['username'])) {
 
 // Récupérer les données du formulaire
     $username = $_POST['email'];
-    $password = $_POST['pass'];
+    $password = $_POST['password'];
 
 // Vérifier l'authenticité de l'utilisateur
 // Note : Ceci est un exemple très basique et ne doit pas être utilisé en production
