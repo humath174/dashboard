@@ -92,7 +92,7 @@ $connexion->close();
                 <?php include 'component/popupadd.php'; ?>
             </div>
         </div>
-        <table>
+        <div class="grid grid-cols-2 gap-4">
             <tr>
                 <th>Image</th>
                 <th>Action</th>
