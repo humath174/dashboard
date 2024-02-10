@@ -9,51 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<main class="bg-sign-in d-flex justify-content-center align-items-center">
-    <div class=" form-sign-in bg-white mt-2 h-auto mb-2 text-center pt-2 pe-4 ps-4 d-flex flex-column">
-        <h1 class="E-classe text-start ms-3 ps-1" >E-classe</h1>
-        <div>
-            <h2 class=" sign-in text-uppercase">sign in</h2>
-            <p>Enter your credentials to access your account</p>
-        </div>
-        <?php
-        if(isset($_GET['error'])){
-            if($_GET['error'] == "please enter your email or password"){
-                echo '<div sclass="alert alert-danger" role="alert">
-            please enter your email or password
-          </div>';
-            }
-            elseif($_GET['error'] == "email or password not found"){
-                echo '<div class="alert alert-danger" role="alert">
-              email or password not found
-          </div>';
-            }
-        }
-        ?>
-        <form method="POST" action="login.php">
-            <div class="mb-3 mt-3 text-start">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php  if(isset($_COOKIE['email'])){echo $_COOKIE['email']; }?>">
-            </div>
-            <div class="mb-3 text-start">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pass" value="<?php  if(isset($_COOKIE['password'])){echo $_COOKIE['password']; }?>" autocomplete="on">
-            </div>
-            <div class="mb-3 form-check d-flex gap-2">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check">
-                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-            </div>
-            <button type="submit" name="submit" class="btn text-white w-100 text-uppercase">sign in</button>
-            <p class="mt-4">Forgot your password? <a href="resetpass.php">Reset Password</a></p>
-
-        </form>
-        <button href="" class="btn-register btn btn-success mb-3">Create Account</button>
-    </div>
-
-</main>
-
-<div class="bg"></div>
-
+<form method="POST" action="login.php">
 <div class="register d-flex justify-content-center align-items-center">
     <div class="sign-up bg-white mt-2 h-auto mb-2 text-center pt-4 pb-3 pe-4 ps-4 d-flex flex-column">
         <div>
@@ -81,6 +37,48 @@
         </form>
     </div>
 </div>
+
+
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+  </div>
+
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form class="space-y-6" action="#" method="POST">
+      <div>
+        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+        <div class="mt-2">
+          <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+
+      <div>
+        <div class="flex items-center justify-between">
+          <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+          <div class="text-sm">
+            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+          </div>
+        </div>
+        <div class="mt-2">
+          <input id="password" name="pass" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+
+      <div>
+        <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+      </div>
+    </form>
+
+    <p class="mt-10 text-center text-sm text-gray-500">
+      Not a member?
+      <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Start a 14 day free trial</a>
+    </p>
+  </div>
+</div>
+</form>
+
 <script src="/js/bootstrap.bundle.js"></script>
 <script src="../bbra/js/validation.js"></script>
 </body>
