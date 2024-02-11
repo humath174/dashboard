@@ -50,7 +50,7 @@ include ('component/head.php')
     ?>
     <!-- end sidebar -->
 </main>
-<div class="ml-9">
+<div class="ml-29">
   <h2>Essaien2</h2>
 </div>
 <h1>essaie</h1>
