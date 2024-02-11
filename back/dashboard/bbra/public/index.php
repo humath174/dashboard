@@ -1,3 +1,6 @@
+<?php
+include ('assets/session.php')
+?>
 <!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
   <head>
