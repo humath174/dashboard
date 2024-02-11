@@ -52,7 +52,7 @@ include ('component/head.php')
 
     <!-- start content page -->
    
-    <div class="flex-auto scroll-pl-20">
+    <div class="flex-auto scroll-pl-20 ">
       <div class="flex flex-col">
         <div class="flex flex-col bg-white h-24 p-2 drop-shadow-2xl">
           <div class="flex flex-row space-x-3">
