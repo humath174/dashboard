@@ -1,4 +1,4 @@
-<div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800 fixed">
+<div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800 static">
   <div class="fixed flex flex-col top-0 left-0 w-64 bg-gray-200 h-full border-r">
     <div class="flex items-center justify-center h-14 border-b">
       <div>AriztoDynamics</div>
