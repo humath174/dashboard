@@ -51,6 +51,7 @@ include ('component/head.php')
     <!-- end sidebar -->
 </main>
 
+<h1>essaie</h1>
 <script src="js/script.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
 </body>
