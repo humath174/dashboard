@@ -295,13 +295,20 @@ include ('assets/sidebar.php')
                 $result = $con -> query("SELECT * FROM contact");
                 foreach($result as $value):
                     ?>
-                    <tr class="bg-white align-middle">
-
-                        <td><?php echo $value['nom'] ?></td>
-                        <td><?php echo $value['prenom'] ?></td>
-                        <td><?php echo $value['mail'] ?></td>
-                        <td><?php echo $value['tel'] ?></td>
-                        <td><?php echo $value['description'] ?></td>
+                    <tr class="text-gray-700 dark:text-gray-400">
+                    <div class="flex items-center text-sm">
+                       
+                        <div>
+                            <p class="font-semibold"> <td class="px-4 py-3"><?php echo $value['nom'] ?></td></p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                              10x Developer
+                            </p>
+                          </div>
+                    </div>
+                        <td class="px-4 py-3"><?php echo $value['prenom'] ?></td>
+                        <td class="px-4 py-3"><?php echo $value['mail'] ?></td>
+                        <td class="px-4 py-3"><?php echo $value['tel'] ?></td>
+                        <td class="px-4 py-3"><?php echo $value['description'] ?></td>
                         <td class="d-md-flex gap-3 mt-3">
                             <a href="remove.php?Id=<?php echo $value['nom']?>"><i class="far fa-trash"></i></a>
                         </td>
