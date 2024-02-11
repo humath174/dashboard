@@ -7,7 +7,7 @@
       <ul class="flex flex-col py-4 space-y-1">
         <li class="px-5">
           <div class="flex flex-row items-center h-8">
-            <div class="text-sm font-light tracking-wide text-gray-500">Menu</div>
+            <div class="text-sm font-light tracking-wide text-red-700">Menu</div>
           </div>
         </li>
         <li>
@@ -46,7 +46,7 @@
         </li>
         <li class="px-5">
           <div class="flex flex-row items-center h-8">
-            <div class="text-sm font-light tracking-wide text-gray-500">Pages</div>
+            <div class="text-sm font-light tracking-wide text-red-700">Pages</div>
           </div>
         </li>
         <li>
@@ -76,7 +76,7 @@
         </li>
         <li class="px-5">
           <div class="flex flex-row items-center h-8">
-            <div class="text-sm font-light tracking-wide text-gray-500">Dashboard Image</div>
+            <div class="text-sm font-light tracking-wide text-red-700">Dashboard Image</div>
           </div>
         </li>
         <li>
@@ -97,7 +97,7 @@
         </li>
         <li class="px-5">
           <div class="flex flex-row items-center h-8">
-            <div class="text-sm font-light tracking-wide text-gray-500">Dashboard Réalisation</div>
+            <div class="text-sm font-light tracking-wide text-red-700">Dashboard Réalisation</div>
           </div>
         </li>
         <li>
@@ -119,7 +119,7 @@
       
         <li class="px-5">
           <div class="flex flex-row items-center h-8">
-            <div class="text-sm font-light tracking-wide text-gray-500">Settings</div>
+            <div class="text-sm font-light tracking-wide text-red-700">Settings</div>
           </div>
         </li>
         <li>

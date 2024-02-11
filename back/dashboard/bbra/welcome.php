@@ -51,9 +51,7 @@ include ('component/head.php')
 
     <!-- start content page -->
     <div class="container-fluid px">
-        <?php
-        include "component/header.php";
-        ?>
+       
         <div class="cards row gap-3 justify-content-center mt-5">
             <div class=" card__items card__items--blue col-md-3 position-relative">
                 <div class="card__students d-flex flex-column gap-2 mt-3">
