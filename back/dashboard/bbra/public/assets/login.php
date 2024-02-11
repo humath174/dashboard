@@ -29,7 +29,7 @@ if (!isset($_SESSION['username'])) {
         echo "Connexion réussie ! Bienvenue, $username.";
 
         // Rediriger vers une page sécurisée par exemple
-        header("Location: welcome.php");
+        header("Location: /public/.php");
     } else {
         echo "Nom d'utilisateur ou mot de passe incorrect.";
     }
