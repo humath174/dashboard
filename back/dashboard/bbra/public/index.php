@@ -192,7 +192,7 @@ include ('assets/sidebar.php')
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                  <span class="h5 fw-bold nbr"><?php echo $nbr_students; ?></span
+                  <span class="h5 fw-bold nbr"><?php echo $nbr_students; ?></span>
                   </p>
                 </div>
               </div>
@@ -356,6 +356,51 @@ include ('assets/sidebar.php')
                 </span>
               </div>
             </div>
+            <div class="student-list-header d-flex justify-content-between align-items-center py-2">
+            <div class="title h6 fw-bold">Demande de contact</div>
+            <div class="btn-add d-flex gap-3 align-items-center">
+                <div class="short">
+                    <i class="far fa-sort"></i>
+                </div>
+                <?php include 'component/popupadd.php'; ?>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table student_list table-borderless">
+                <thead>
+                <tr class="align-middle">
+                    <th class="opacity-0">vide</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Mail</th>
+                    <th>Telephone</th>
+                    <th>Description</th>
+                    <th class="opacity-0">list</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                include 'database/conixion.php';
+                $result = $con -> query("SELECT * FROM contact");
+                foreach($result as $value):
+                    ?>
+                    <tr class="bg-white align-middle">
+
+                        <td><?php echo $value['nom'] ?></td>
+                        <td><?php echo $value['prenom'] ?></td>
+                        <td><?php echo $value['mail'] ?></td>
+                        <td><?php echo $value['tel'] ?></td>
+                        <td><?php echo $value['description'] ?></td>
+                        <td class="d-md-flex gap-3 mt-3">
+                            <a href="remove.php?Id=<?php echo $value['nom']?>"><i class="far fa-trash"></i></a>
+                        </td>
+                    </tr>
+
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+
 
             <!-- Charts -->
             <h2
