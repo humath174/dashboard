@@ -28,12 +28,29 @@ include ('component/head.php')
  ?>
    
 </head>
-
 <body class="bg-content">
-<?php
-include ('component/header.php')
- ?>
-<h1>Essaie</h1>
+<main class="dashboard d-flex">
+    <!-- start sidebar -->
+
+    <?php
+    include "component/sidebar.php";
+    include 'pages/conixion.php';
+    $nbr_students = $con->query("SELECT * FROM contact");
+    $nbr_students = $nbr_students->rowCount();
+
+    $nbr_cours = $con->query("SELECT * FROM devis");
+    $nbr_cours = $nbr_cours->rowCount();
+
+    $nbr_client = $con->query("SELECT * FROM client");
+    $nbr_client = $nbr_client->rowCount();
+
+    $nbr_img = $con->query("SELECT * FROM photos");
+    $nbr_img = $nbr_img->rowCount();
+
+    ?>
+    <!-- end sidebar -->
+</main>
+
 <script src="js/script.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
 </body>
