@@ -300,9 +300,7 @@ include ('assets/sidebar.php')
                        
                         <div>
                             <p class="font-semibold"> <td class="px-4 py-3"><?php echo $value['nom'] ?></td></p>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">
-                              10x Developer
-                            </p>
+                           
                           </div>
                     </div>
                         <td class="px-4 py-3"><?php echo $value['prenom'] ?></td>
