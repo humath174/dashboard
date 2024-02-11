@@ -28,6 +28,9 @@ include ('component/head.php')
  ?>
    
 </head>
+<?php
+include ('component/header.php')
+ ?>
 <body class="bg-content">
 <h1>Essaie</h1>
 <script src="js/script.js"></script>
