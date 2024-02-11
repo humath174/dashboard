@@ -28,10 +28,11 @@ include ('component/head.php')
  ?>
    
 </head>
+
+<body class="bg-content">
 <?php
 include ('component/header.php')
  ?>
-<body class="bg-content">
 <h1>Essaie</h1>
 <script src="js/script.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
