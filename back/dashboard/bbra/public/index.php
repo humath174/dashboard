@@ -38,6 +38,27 @@ include ('assets/head.php')
 <?php
 include ('assets/sidebar.php')
 ?>
+<?php
+    try {
+        $con = new PDO("mysql:host=192.168.1.24;dbname=bbra", "monty", "some_pass");
+        $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      }
+       catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+      }
+    $nbr_students = $con->query("SELECT * FROM contact");
+    $nbr_students = $nbr_students->rowCount();
+
+    $nbr_cours = $con->query("SELECT * FROM devis");
+    $nbr_cours = $nbr_cours->rowCount();
+
+    $nbr_client = $con->query("SELECT * FROM client");
+    $nbr_client = $nbr_client->rowCount();
+
+    $nbr_img = $con->query("SELECT * FROM photos");
+    $nbr_img = $nbr_img->rowCount();
+
+    ?>
 
         <main class="h-full overflow-y-auto">
           <div class="container px-6 mx-auto grid">
@@ -185,46 +206,57 @@ include ('assets/sidebar.php')
                     <tr
                       class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                     >
-                     
-
-                    <?php
-// Paramètres de connexion à la base de données
-include('database/database.php');
-
-
-// Créer une connexion à la base de données
-$connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
-
-// Vérifier la connexion
-if ($connexion->connect_error) {
-    die("La connexion à la base de données a échoué : " . $connexion->connect_error);
-}
-
-// Récupérer les informations des utilisateurs depuis la base de données
-$requete = "SELECT * FROM contact";
-$resultat = $connexion->query($requete);
-
-if ($resultat->num_rows > 0) {
-    echo "<h2>Informations des Utilisateurs</h2>";
-    echo "<table>";
-    echo "<tr><th class="px-4 py-3">ID</th><th class="px-4 py-3">Nom</th><th class="px-4 py-3">Prenom</th><th class="px-4 py-3">Mail</th><th class="px-4 py-3">Telephone</th><th class="px-4 py-3">Description</th></tr>";
-
-    // Afficher les informations des utilisateurs dans le tableau
-    while ($row = $resultat->fetch_assoc()) {
-        echo "<tr><td>" . $row["id"] . "</td><td>" . $row["nom"] . "</td><td>" . $row["prenom"] . "</td><td>" . $row["mail"] . "</td><td>" . $row["tel"] . "</td><td>" . $row["description"] . "</td></tr>";
-    }
-
-    echo "</table>";
-} else {
-    echo "Aucune donnée à afficher.";
-}
-
-// Fermer la connexion à la base de données
-$connexion->close();
-?>
+                      <th class="px-4 py-3">Client</th>
+                      <th class="px-4 py-3">Email</th>
+                      <th class="px-4 py-3">Telephone</th>
+                      <th class="px-4 py-3">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                  >
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+                          <div
+                            class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
+                          >
+                            <img
+                              class="object-cover w-full h-full rounded-full"
+                              src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                              alt=""
+                              loading="lazy"
+                            />
+                            <div
+                              class="absolute inset-0 rounded-full shadow-inner"
+                              aria-hidden="true"
+                            ></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold">Hans Burger</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                              10x Developer
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        $ 863.45
+                      </td>
+                      <td class="px-4 py-3 text-xs">
+                        <span
+                          class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >
+                          Approved
+                        </span>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        6/10/2020
+                      </td>
+                    </tr>
 
                   </tbody>
-
                 </table>
               </div>
               <div
@@ -336,7 +368,7 @@ $connexion->close();
                 class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
               >
                 <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
-                  Visite Site Web
+                  Visite Site 
                 </h4>
                 <canvas id="pie"></canvas>
                 <div
