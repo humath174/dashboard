@@ -50,7 +50,9 @@ include ('component/head.php')
     ?>
     <!-- end sidebar -->
 </main>
-
+<div class="ml-9">
+  <h2>Essaien2</h2>
+</div>
 <h1>essaie</h1>
 <script src="js/script.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
