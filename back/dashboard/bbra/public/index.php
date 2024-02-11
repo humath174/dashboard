@@ -289,7 +289,7 @@ include ('assets/sidebar.php')
                    
                 </tr>
                 </thead>
-                <tbody>
+                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                 <?php
                 include 'database/conixion.php';
                 $result = $con -> query("SELECT * FROM contact");
