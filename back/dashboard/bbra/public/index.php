@@ -55,7 +55,7 @@ include ('assets/sidebar.php')
     $nbr_client = $con->query("SELECT * FROM client");
     $nbr_client = $nbr_client->rowCount();
 
-    $nbr_img = $con->query("SELECT * FROM photos");
+    $nbr_img = $con->query("SELECT * FROM realisation");
     $nbr_img = $nbr_img->rowCount();
 
     ?>
@@ -110,7 +110,7 @@ include ('assets/sidebar.php')
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                    6389
+                  <span class="h5 fw-bold nbr"><?php echo $nbr_client; ?></span
                   </p>
                 </div>
               </div>
@@ -138,7 +138,7 @@ include ('assets/sidebar.php')
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                    $ 46,760.89
+                  <span class="h5 fw-bold nbr"><?php echo $nbr_img; ?></span
                   </p>
                 </div>
               </div>
@@ -164,7 +164,7 @@ include ('assets/sidebar.php')
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                    376
+                  <span class="h5 fw-bold nbr"><?php echo $nbr_cours; ?></span
                   </p>
                 </div>
               </div>
@@ -192,7 +192,7 @@ include ('assets/sidebar.php')
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                    35
+                  <span class="h5 fw-bold nbr"><?php echo $nbr_students; ?></span
                   </p>
                 </div>
               </div>
