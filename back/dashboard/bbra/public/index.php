@@ -1,4 +1,6 @@
-
+<?php
+include ('assets/session.php')
+?>
 <!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
   <head>
@@ -111,7 +113,7 @@ include ('assets/sidebar.php')
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                  <span class="h5 fw-bold nbr"><?php echo $nbr_client; ?></span
+                  <span class="h5 fw-bold nbr"><?php echo $nbr_client; ?></span>
                   </p>
                 </div>
               </div>
@@ -139,7 +141,7 @@ include ('assets/sidebar.php')
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                  <span class="h5 fw-bold nbr"><?php echo $nbr_img; ?></span
+                  <span class="h5 fw-bold nbr"><?php echo $nbr_img; ?></span>
                   </p>
                 </div>
               </div>
@@ -165,7 +167,7 @@ include ('assets/sidebar.php')
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                  <span class="h5 fw-bold nbr"><?php echo $nbr_cours; ?></span
+                  <span class="h5 fw-bold nbr"><?php echo $nbr_cours; ?></span>
                   </p>
                 </div>
               </div>
