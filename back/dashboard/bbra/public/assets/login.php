@@ -39,5 +39,6 @@ if (!isset($_SESSION['username'])) {
 
 } else {
     // Afficher un message personnalisé si la session est active
-    echo "<a href='/public/index.php'>Tableaux de bord</a>";
+    header('Location: /index.php');
+    exit();
 }
