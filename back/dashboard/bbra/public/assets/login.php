@@ -4,7 +4,7 @@ session_start();
 if (!isset($_SESSION['username'])) {
 
 // Paramètres de connexion à la base de données
-    include('/public/database/database.php');
+    include('/database/database.php');
 
 // Créer une connexion à la base de données
     $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
@@ -29,7 +29,7 @@ if (!isset($_SESSION['username'])) {
         echo "Connexion réussie ! Bienvenue, $username.";
 
         // Rediriger vers une page sécurisée par exemple
-        header("Location: /public/.php");
+        header("Location: /index.php");
     } else {
         echo "Nom d'utilisateur ou mot de passe incorrect.";
     }
