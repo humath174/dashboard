@@ -59,7 +59,7 @@ include ('assets/sidebar.php');
 
                 include 'database/conixion.php';
                 $entreprise_id = $_SESSION['entreprise_id'];
-                $result = $con -> query("SELECT * FROM `demande_contact` WHERE `entreprise_id = $entreprise_id`");
+                $result = $con->query("SELECT * FROM demande_contact WHERE entreprise_id = $entreprise_id");
                 foreach($result as $value):
 
                     ?>
