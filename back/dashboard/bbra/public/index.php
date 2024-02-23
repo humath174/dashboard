@@ -1,3 +1,4 @@
+
 <?php
 include ('assets/session.php')
 ?>
@@ -39,7 +40,8 @@ include ('assets/head.php')
       <!-- Desktop sidebar -->
       
 <?php
-include ('assets/sidebar.php')
+include ('assets/sidebar.php');
+$entreprise_id = $_SESSION['entreprise_id'];
 ?>
 <?php
     try {
@@ -58,7 +60,7 @@ include ('assets/sidebar.php')
     $nbr_client = $con->query("SELECT * FROM client");
     $nbr_client = $nbr_client->rowCount();
 
-    $nbr_img = $con->query("SELECT * FROM realisation");
+    $nbr_img = $con->query("SELECT * FROM realisation WHERE entreprise_id = $entreprise_id");
     $nbr_img = $nbr_img->rowCount();
 
     ?>

@@ -56,7 +56,7 @@ include ('assets/sidebar.php')
                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                 <?php
                 include 'database/conixion.php';
-                $result = $con -> query("SELECT * FROM contact LIMIT 10");
+                $result = $con -> query("SELECT * FROM demande_contact LIMIT 10");
                 foreach($result as $value):
                     ?>
                     <tr class="text-gray-700 dark:text-gray-400">
