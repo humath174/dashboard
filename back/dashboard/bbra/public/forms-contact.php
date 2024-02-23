@@ -1,3 +1,9 @@
+<?php
+
+$entreprise_id = $_SESSION['entreprise_id'];
+
+
+?>
 <!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
   <head>
@@ -23,7 +29,6 @@
 
     <?php
 include ('assets/sidebar.php');
-$entreprise_id = $_SESSION['entreprise_id'];
     ?>
                 
             <div class="student-list-header d-flex justify-content-between align-items-center py-2">
@@ -70,8 +75,8 @@ $entreprise_id = $_SESSION['entreprise_id'];
                     </div>
                         <td class="px-4 py-3"><?php echo $value['prenom'] ?></td>
                         <td class="px-4 py-3"><?php echo $value['mail'] ?></td>
-                        <td class="px-4 py-3"><?php echo $value['tel'] ?></td>
-                        <td class="px-4 py-3"><?php echo $value['description'] ?></td>
+                        <td class="px-4 py-3"><?php echo $value['telephone'] ?></td>
+                        <td class="px-4 py-3"><?php echo $value['message'] ?></td>
                         <td class="d-md-flex gap-3 mt-3">
                             <a href="remove.php?Id=<?php echo $value['nom']?>"><i class="far fa-trash"></i></a>
                         </td>
