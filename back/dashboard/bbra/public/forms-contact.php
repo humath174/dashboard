@@ -62,7 +62,7 @@ include ('assets/sidebar.php');
                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                 <?php
                 include 'database/conixion.php';
-                $result = $con -> query("SELECT * FROM demande_contact WHERE entreprise_id = $entreprise_id");
+                $result = $con -> query("SELECT * FROM demande_contact ");
                 foreach($result as $value):
                     ?>
                     <tr class="text-gray-700 dark:text-gray-400">
