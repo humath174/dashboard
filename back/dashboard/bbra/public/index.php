@@ -45,7 +45,7 @@ $entreprise_id = $_SESSION['entreprise_id'];
 ?>
 <?php
     try {
-        $con = new PDO("mysql:host=192.168.1.24;dbname=bbra", "monty", "some_pass");
+        $con = new PDO("mysql:host=192.168.1.24;dbname=dashboard", "monty", "some_pass");
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       }
        catch(PDOException $e) {
