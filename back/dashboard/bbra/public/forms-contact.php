@@ -1,15 +1,9 @@
-<?php
-
-$entreprise_id = $_SESSION['entreprise_id'];
-
-
-?>
 <!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Windmill Dashboard - Forms</title>
+    <title>AriztoDynamics - Contact</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -61,9 +55,13 @@ include ('assets/sidebar.php');
                 </thead>
                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                 <?php
+               
+
                 include 'database/conixion.php';
+                $entreprise_id = $_SESSION['entreprise_id'];
                 $result = $con -> query("SELECT * FROM `demande_contact` WHERE `entreprise_id = $entreprise_id`");
                 foreach($result as $value):
+
                     ?>
                     <tr class="text-gray-700 dark:text-gray-400">
                     <div class="flex items-center text-sm">
